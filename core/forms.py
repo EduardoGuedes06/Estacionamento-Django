@@ -1,8 +1,8 @@
 from dataclasses import fields
 from pyexpat import model
 from django.forms import ModelForm
-from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from core.models import *
+from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 
 
 class FormFabricante(ModelForm):
@@ -29,22 +29,14 @@ class FormRotativo(ModelForm):
     class Meta:
         model = Rotativo
         fields = '__all__'
-        widgets = {
-            'data_entrada': DateTimePickerInput(format='%d/%m/%Y HH:mm'), 
-            'data_saida': DateTimePickerInput(format='%d/%m/%Y HH:mm')
-        }
-        
+        widgets = {'data_entrada': DateTimePickerInput(), 'data_saida': DateTimePickerInput()}
 
 
 class FormCadastroRotativo(ModelForm):
     class Meta:
         model = Rotativo
         fields = ['data_entrada', 'id_veiculo', 'id_preco']
-        widgets = {
-            'data_entrada': DateTimePickerInput(format='%d/%m/%Y HH:mm'), 
-            'data_saida': DateTimePickerInput(format='%d/%m/%Y HH:mm')
-        }
-
+        widgets = {'data_entrada': DateTimePickerInput(), 'data_saida': DateTimePickerInput()}
 
 class FormMensalista(ModelForm):
     class Meta:

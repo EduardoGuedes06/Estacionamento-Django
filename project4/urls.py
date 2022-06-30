@@ -8,7 +8,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/registrar', Registrar.as_view(), name="url_registrar"),
+    path('accounts/registrar/', Registrar.as_view(), name="url_registrar"),
     path('', home, name='url_principal'),
 
     #Clientes
@@ -18,14 +18,14 @@ urlpatterns = [
     path('exclui_cliente/<int:id>/', exclui_cliente, name="url_exclui_cliente"),
 
     #Veiculos
-    path('cadastro_veiculo/', cadastro_veiculo),
+    path('cadastro_veiculos/', cadastro_veiculo),
     path('lista_veiculos/', lista_veiculo, name="url_lista_veiculos"),
     path('altera_veiculo/<int:id>/', altera_veiculo, name="url_altera_veiculo"),
     path('exclui_veiculo/<int:id>/', exclui_veiculo, name="url_exclui_veiculo"),
 
     #Fabricantes
-    path('cadastro_fabricante/', cadastro_fabricante),
-    path('lista_fabricante', lista_fabricante),
+    path('cadastro_fabricantes/', cadastro_fabricante),
+    path('lista_fabricantes/', lista_fabricante),
 
     #Tabela de preços
     path('tabela/', tabela_preco),
